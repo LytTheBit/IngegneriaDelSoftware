@@ -2,149 +2,171 @@ package ORM;
 import java.sql.*;
 import java.util.ArrayList;
 
+import DomainModel.*;
 
-public class Book {
-    public Autori getautori(String idcode) throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "SELECT parentid FROM children WHERE idcode = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, idcode);
-        ResultSet rs = ps.executeQuery();
+public class BookDAO {
+    public void clearBook() throws SQLException, ClassNotFoundException{
+        //Valori diversi da 0
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "DELETE FROM `jdbc-book`.`libri` WHERE id!=0";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.executeUpdate();
+        //Valori uguali a 0
+        sql = "DELETE FROM `jdbc-book`.`libri` WHERE id=0";
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.executeUpdate();
 
-        ParentDAO parentdao = new ParentDAO();
+        System.out.println("Pulita la tabella Libri");
+    }
+    public Book getBook(int idcode) throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "SELECT `libri`.`id`, `libri`.`titolo`, `libri`.`idAutore`, `libri`.`idEditore` FROM `jdbc-book`.`libri` WHERE id=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, idcode);
+        ResultSet rs = preparedStatement.executeQuery();
         if (rs.next()) {
-            Parent parent = parentdao.getParent(rs.getString("parentid"));
-            return parent;
+            int id = rs.getInt("id");
+            String nameBook = rs.getString("titolo");
+            int idAuthor = rs.getInt("idAutore");
+            int idEditor = rs.getInt("idEditore");
+
+            AuthorDAO authorDao = new AuthorDAO();
+            Author author = authorDao.getAuthor(idAuthor); //new Author(idAuthor, "test", "test");
+            EditorDAO editorDao = new EditorDAO();
+            Editor editor = editorDao.getEditor(idEditor);
+
+            Book book = new Book(idcode, nameBook, author, editor);
+            return book;
         }
         return null;
-        */
     }
-
-    public ArrayList<Child> getAllChildren() throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "SELECT idcode, name, surname, age, details, weeknum, idstrategy, feepaid FROM children";
+    public ArrayList<Book> getAllBook() throws SQLException, ClassNotFoundException {
+        Connection con = DatabaseConnection.getConnection();
+        String sql = "SELECT `libri`.`id`, `libri`.`titolo`, `libri`.`idAutore`, `libri`.`idEditore` FROM `jdbc-book`.`libri`";
         PreparedStatement ps = con.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
 
-        ArrayList<Child> children = new ArrayList<Child>();
+        ArrayList<Book> books = new ArrayList<Book>();
         while (rs.next()) {
-            String idcode = rs.getString("idcode");
-            String name = rs.getString("name");
-            String surname = rs.getString("surname");
-            int age = rs.getInt("age");
-            String details = rs.getString("details");
-            int weeknum = rs.getInt("weeknum");
-            boolean feepaid = rs.getBoolean("feepaid");
-            FeeStrategy feestrategy;
-            if(rs.getInt("idstrategy") == 1){
-                feestrategy = new SiblingFee();
-            }
-            else{
-                feestrategy = new OnlyChildFee();
-            }
-            Subscription subscription = new Subscription(weeknum, null, feestrategy, feepaid);
-            Child child = new Child(idcode, name, surname, age, details);
-            child.setSubscription(subscription);
-            children.add(child);
-        }
-        return children;
+            int id = rs.getInt("id");
+            String nameBook = rs.getString("titolo");
+            int idAuthor = rs.getInt("idAutore");
+            int idEditor = rs.getInt("idEditore");
 
-         */
+            AuthorDAO authorDao = new AuthorDAO();
+            Author author = authorDao.getAuthor(idAuthor);
+            EditorDAO editorDao = new EditorDAO();
+            Editor editor = editorDao.getEditor(idEditor);
+
+            Book book = new Book(id, nameBook, author, editor);
+            books.add(book);
+        }
+        return books;
     }
 
-    public Child getChild(String idcode) throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "SELECT idcode, name, surname, age, details, weeknum, idstrategy, feepaid  FROM children WHERE idcode = ?";
+    public ArrayList<Book> getBookByAuthor(int idcode) throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "SELECT `libri`.`id`, `libri`.`titolo`, `libri`.`idAutore`, `libri`.`idEditore` FROM `jdbc-book`.`libri` WHERE idAutore=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, idcode);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        ArrayList<Book> books = new ArrayList<Book>();
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nameBook = rs.getString("titolo");
+            int idAuthor = rs.getInt("idAutore");
+            int idEditor = rs.getInt("idEditore");
+
+            AuthorDAO authorDao = new AuthorDAO();
+            Author author = authorDao.getAuthor(idAuthor);
+            EditorDAO editorDao = new EditorDAO();
+            Editor editor = editorDao.getEditor(idEditor);
+
+            Book book = new Book(id, nameBook, author, editor);
+            books.add(book);
+        }
+        return books;
+    }
+
+    public ArrayList<Book> getBookByEditor(int idcode) throws SQLException, ClassNotFoundException {
+        Connection connection = DatabaseConnection.getConnection();
+        String sql = "SELECT `libri`.`id`, `libri`.`titolo`, `libri`.`idAutore`, `libri`.`idEditore` FROM `jdbc-book`.`libri` WHERE idEditore=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1, idcode);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        ArrayList<Book> books = new ArrayList<Book>();
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nameBook = rs.getString("titolo");
+            int idAuthor = rs.getInt("idAutore");
+            int idEditor = rs.getInt("idEditore");
+
+            AuthorDAO authorDao = new AuthorDAO();
+            Author author = authorDao.getAuthor(idAuthor);
+            EditorDAO editorDao = new EditorDAO();
+            Editor editor = editorDao.getEditor(idEditor);
+
+            Book book = new Book(id, nameBook, author, editor);
+            books.add(book);
+        }
+        return books;
+    }
+
+    public void insertBook(Book book) throws SQLException, ClassNotFoundException {
+        Connection con = DatabaseConnection.getConnection();
+        String sql = "INSERT INTO libri (id, titolo, idAutore, idEditore) VALUES (?, ?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, idcode);
-        ResultSet rs = ps.executeQuery();
+        ps.setInt(1, book.getId());
+        ps.setString(2, book.getTitle());
+        ps.setInt(3, book.getAuthor().getId());
+        ps.setInt(4, book.getEditor().getId());
+
+        //controllo se l'autore e l'editore sono già presenti
+        //nel database altrimenti li aggiungo
+        AuthorDAO authorDao = new AuthorDAO();
+        if((authorDao.isAuthorExists(book.getAuthor().getId()))==false) {
+            authorDao.insertAuthor(book.getAuthor());
+        }
+        EditorDAO editorDao = new EditorDAO();
+        if((editorDao.isEditorExists(book.getEditor().getId()))==false) {
+            editorDao.insertEditor(book.getEditor());
+        }
+
+
+        //inserisco il libro nel registro
+        RegisterDAO registerDao = new RegisterDAO();
+        registerDao.insertRegister(book);
+
+
+        ps.executeUpdate();
+        ps.close();
+    }
+
+    public boolean isBookExists(int idcode) throws SQLException, ClassNotFoundException{
+        boolean exists = false;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        // Connessione al database
+        Connection connectionn = DatabaseConnection.getConnection();
+
+        // Query per cercare il libro nella tabella libri
+        String query = "SELECT * FROM libri WHERE id = ?";
+        stmt = connectionn.prepareStatement(query);
+        stmt.setInt(1, idcode);
+        rs = stmt.executeQuery();
+
+        // Verifica se il risultato contiene qualche riga
         if (rs.next()) {
-            String name = rs.getString("name");
-            String surname = rs.getString("surname");
-            int age = rs.getInt("age");
-            String details = rs.getString("details");
-            int weeknum = rs.getInt("weeknum");
-            boolean feepaid = rs.getBoolean("feepaid");
-            FeeStrategy feestrategy;
-            if(rs.getInt("idstrategy") == 1){
-                feestrategy = new SiblingFee();
-            }
-            else{
-                feestrategy = new OnlyChildFee();
-            }
-            Subscription subscription = new Subscription(weeknum, null, feestrategy, feepaid);
-            Child child = new Child(idcode, name, surname, age, details);
-            child.setSubscription(subscription);
-            return child;
+            exists = true; // il libro è presente nella tabella
         }
-        return null;
-
-         */
-    }
-
-    public ArrayList<Child> getChildrenbyParent(String parentID) throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "SELECT idcode, name, surname, age, details FROM children WHERE parentid = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, parentID);
-        ResultSet rs = ps.executeQuery();
-
-        ArrayList<Child> children = new ArrayList<Child>();
-        SubscriptionDAO subscriptiondao = new SubscriptionDAO();
-        while (rs.next()) {
-            String idcode = rs.getString("idcode");
-            String name = rs.getString("name");
-            String surname = rs.getString("surname");
-            int age = rs.getInt("age");
-            String details = rs.getString("details");
-            Child child = new Child(idcode, name, surname, age, details);
-            Subscription subscription = subscriptiondao.getChildInfo(idcode);
-            child.setSubscription(subscription);
-            children.add(child);
+        else{
+            exists = false;
         }
-        return children;
 
-         */
-    }
-
-    public void insertChild(Child child, Subscription subscription, String parentid) throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "INSERT INTO children (idcode, name, surname, age, details, parentid, weeknum, idstrategy, feepaid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, child.getIdcode());
-        ps.setString(2, child.getName());
-        ps.setString(3, child.getSurname());
-        ps.setInt(4, child.getAge());
-        ps.setString(5, child.getDetails());
-        ps.setString(6, parentid);
-        ps.setInt(7, subscription.getWeeksnum());
-        if(subscription.getFeeStrategy() instanceof SiblingFee) {
-            ps.setInt(8, 1);
-        }
-        else if(subscription.getFeeStrategy() instanceof OnlyChildFee) {
-            ps.setInt(8, 2);
-        }
-        ps.setBoolean(9, false);
-        ps.executeUpdate();
-        ps.close();
-
-         */
-    }
-
-    public void delete(Child child) throws SQLException, ClassNotFoundException {
-        /*
-        Connection con = ConnectionManager.getConnection();
-        String sql = "DELETE FROM children WHERE idcode = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, child.getIdcode());
-        ps.executeUpdate();
-        ps.close();
-
-         */
+        return exists;
     }
 }

@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d049d832-1dbf-4aac-9beb-fe07db418976" name="Changes" comment="" />
+    <list default="true" id="d049d832-1dbf-4aac-9beb-fe07db418976" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Test/DomainModel/AuthorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DomainModel/BookTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DomainModel/EditorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DomainModel/RegisterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/DomainModel/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ORM/AuthorDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ORM/BookDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ORM/EditorDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ORM/RegisterDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/ORM/UserDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DomainModel/Register.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ORM/RegisterDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LaboratorioIDS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BusinessLogic/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BusinessLogic/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DomainModel/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomainModel/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DomainModel/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomainModel/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DomainModel/Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomainModel/Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DomainModel/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DomainModel/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/AuthorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/EditorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/EditorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ORM/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ORM/UserDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="DAO-complete" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2cjFNjSX17UiRtJZkNEKLGsbb2Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,15 +68,133 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MainTest.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.AuthorDAOTest.getAuthorTest.executor": "Run",
+    "JUnit.AuthorDAOTest.insertAuthorTest.executor": "Run",
+    "JUnit.AuthorDAOTest.isAuthorExistsTest.executor": "Run",
+    "JUnit.AuthorTest.executor": "Run",
+    "JUnit.AuthorTest.idReturnTest.executor": "Run",
+    "JUnit.BookDAOTest.BookExistsTest.executor": "Run",
+    "JUnit.BookDAOTest.executor": "Run",
+    "JUnit.BookDAOTest.getBookTest.executor": "Run",
+    "JUnit.BookDAOTest.insertAuthorTest.executor": "Run",
+    "JUnit.BookTest.executor": "Run",
+    "JUnit.EditorDAOTest.executor": "Run",
+    "JUnit.EditorTest.executor": "Run",
+    "JUnit.RegisterDAOTest.executor": "Run",
+    "JUnit.RegisterDAOTest.takeBookCopyTest.executor": "Run",
+    "JUnit.RegisterTest.executor": "Run",
+    "JUnit.UserDAOTest.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "JUnit.UserTest.userBookLoanTest.executor": "Run",
+    "JUnit.UserTest.userStateTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/franc/Downloads",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/franc/IdeaProjects/Test/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ORM" />
+      <recent name="" />
+      <recent name="DomainModel" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="LaboratorioIDS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <module name="LaboratorioIDS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LaboratorioIDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ORM.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ORM" />
+      <option name="MAIN_CLASS_NAME" value="ORM.RegisterDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LaboratorioIDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ORM.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ORM" />
+      <option name="MAIN_CLASS_NAME" value="ORM.UserDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LaboratorioIDS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DomainModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DomainModel" />
+      <option name="MAIN_CLASS_NAME" value="DomainModel.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.UserDAOTest" />
+        <item itemvalue="JUnit.RegisterDAOTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,11 +210,50 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708617044493</updated>
-      <workItem from="1708617045669" duration="6000" />
+      <workItem from="1708617045669" duration="3578000" />
+      <workItem from="1708683219783" duration="1944000" />
+      <workItem from="1708705441547" duration="3841000" />
+      <workItem from="1708767414771" duration="3853000" />
+      <workItem from="1708957295520" duration="45031000" />
+      <workItem from="1709902593279" duration="17072000" />
+      <workItem from="1710071587881" duration="9605000" />
+      <workItem from="1710170569569" duration="9706000" />
+      <workItem from="1710578739926" duration="3663000" />
+      <workItem from="1710603981022" duration="802000" />
+      <workItem from="1710772951316" duration="7690000" />
+      <workItem from="1713027830302" duration="12613000" />
+      <workItem from="1713192370030" duration="15100000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
